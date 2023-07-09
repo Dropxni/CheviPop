@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "cc80d8e5-ec20-4438-9822-507efa63eb5d"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -93,6 +94,13 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "TYPERMAN:build:production"
           }
         }
       }

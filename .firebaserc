@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "typerman": {
+      "hosting": {
+        "TYPERMAN": [
+          "typerman"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "typerman"
+  }
+}
