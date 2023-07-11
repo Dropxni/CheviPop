@@ -11,6 +11,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { ProfileComponent } from './components/profile/profile.component';
+import { SettingComponent } from './components/setting/setting.component';
+import { StoreComponent } from './components/store/store.component';
+import { BossComponent } from './components/boss/boss.component';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +29,10 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     MainComponent,
     RegisterComponent,
     LoginComponent,
+    ProfileComponent,
+    SettingComponent,
+    StoreComponent,
+    BossComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +40,13 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     NgbModule,
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
