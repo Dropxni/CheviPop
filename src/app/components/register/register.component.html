@@ -1,79 +1,38 @@
+<!-- Importante: Asegúrate de que en tu módulo hayas importado MatFormFieldModule, MatInputModule y MatButtonModule -->
+
+<div class="form-container mat-elevation-z4">
+    <h2 class="form-title">Registro de usuario</h2>
+    <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" placeholder="Ingrese su email">
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" formControlName="password" placeholder="Ingrese su contraseña">
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" class="full-width" type="submit">Enviar</button>
+    </form>
+</div>
+
 <style>
     .form-container {
         max-width: 400px;
         margin: 0 auto;
         padding: 20px;
-        background-color: #f5f5f5;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background: white;
+        border-radius: 8px;
     }
-
     .form-title {
         text-align: center;
         margin-bottom: 20px;
-        color: #333;
-        font-size: 24px;
-        font-weight: bold;
     }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    .form-label {
-        display: block;
-        margin-bottom: 5px;
-        color: #555;
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    .form-control {
+    .full-width {
         width: 100%;
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 3px;
-        border: 1px solid #ccc;
-    }
-
-    .form-control:focus {
-        outline: none;
-        border-color: #4a90e2;
-        box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
-    }
-
-    .submit-btn {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        color: #fff;
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
-        background-color: #4a90e2;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .submit-btn:hover {
-        background-color: #357ae8;
+        margin-bottom: 16px;
     }
 </style>
 
-<div class="form-container">
-    <h2 class="form-title">Registro de usuario</h2>
-    <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label class="form-label">Email</label>
-            <input type="text" class="form-control" formControlName="email" placeholder="Ingrese su email">
-        </div>
-        <div class="form-group">
-            <label class="form-label">Contraseña</label>
-            <input type="password" class="form-control" formControlName="password" placeholder="Ingrese su contraseña">
-        </div>
-        <input type="submit" value="Enviar" class="submit-btn">
-    </form>
-</div>
 

@@ -1,50 +1,192 @@
+/* ================================================ */
+/*              Reset y estilos globales            */
+/* ================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Fondo degradado en tonos pastel cálidos */
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #333;
 }
 
-#sidebar {
-    width: 200px;
-    height: 100vh;
-    background-color: #3f51b5;
-    color: #fff;
-    padding: 20px;
+/* ================================================ */
+/*                    Encabezado                    */
+/* ================================================ */
+header {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-#sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#sidebar ul li {
-    margin-bottom: 10px;
+header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  margin: 0;
 }
 
-#sidebar ul li a {
-    color: #fff;
-    text-decoration: none;
-    display: flex;
+.logout-button {
+  background: #ff6f61;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-button:hover {
+  background: #ff3b2e;
+}
+
+/* ================================================ */
+/*           Contenedor principal de paneles        */
+/* ================================================ */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ================================================ */
+/*                Estilos de los paneles            */
+/* ================================================ */
+.panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1 1 300px; /* Se adapta al espacio disponible */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.panel:hover {
+  transform: translateY(-5px);
+}
+
+.panel h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #ff6f61; /* Acento coral para títulos */
+}
+
+/* ================================================ */
+/*         Panel de Control: Cuadrícula de botones    */
+/* ================================================ */
+.control-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.control-grid button {
+  padding: 15px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #ff6f61;
+  color: #fff;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.control-grid button:hover {
+  background: #ff3b2e;
+  transform: scale(1.05);
+}
+
+.control-grid button:active {
+  transform: scale(0.98);
+}
+
+/* Botones vacíos para mantener la estructura de la cuadrícula */
+.empty {
+  background: transparent;
+  pointer-events: none;
+}
+
+/* ================================================ */
+/*         Panel de Datos: Lista de información     */
+/* ================================================ */
+.data-list {
+  list-style: none;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.data-list li {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.data-list li:last-child {
+  border-bottom: none;
+}
+
+.data-label {
+  font-weight: bold;
+  color: #ff6f61;
+}
+
+/* ================================================ */
+/*              Media Queries (Responsividad)       */
+/* ================================================ */
+
+/* Ajustes para pantallas menores a 768px */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .container {
+    flex-direction: column;
     align-items: center;
-    padding: 38px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  }
+  .panel {
+    width: 100%;
+  }
 }
 
-#sidebar ul li a:hover {
-    background-color: #8e99f3;
-}
-
-#sidebar ul li a i {
-    margin-right: 10px;
-}
-
-#content {
-    margin-left: 250px;
-    padding: 20px;
-}
-
-h1 {
-    color: #333;
+/* Ajustes para pantallas menores a 480px */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  .control-grid button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  .data-list {
+    font-size: 1rem;
+  }
 }

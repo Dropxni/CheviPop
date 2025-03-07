@@ -9,6 +9,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class MainComponent implements OnInit {
 
+  title = 'Control de carro IoT';
+
   constructor(
     private userService: UserService,
     private router: Router
