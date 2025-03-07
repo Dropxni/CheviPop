@@ -1,32 +1,41 @@
-# VIVA CRISTO REY
+- **Desarrolladores**:
+    Oscar 
+    Manuel
 
-# TYPERMAN
+# Proyecto Chevy Pop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+## Descripción
+TYPERMAN es un proyecto diseñado para el control y monitoreo de un carro a control remoto, contara con funciones avanxadas como la transimison de video y monitoro de ambiente mediante sensores
 
-## Development server
+## Características
+Transmision de video
+Control de hardware
+Monitoreo de ambiente
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Instalación
+Para instalar el proyecto, sigue estos pasos:
 
-## Code scaffolding
+```bash
+git clone https://github.com/tu-usuario/typerman.git
+cd typerman
+npm install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Uso
+Para usar el proyecto, ejecuta el siguiente comando:
 
-## Build
+```bash
+npm start
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Detalles del Proyecto Front-End
+- **Versión de Angular**: 12.0.0
+- **Dependencias principales**:
+  - Angular CLI: 12.0.0
+  - TypeScript: 4.2.4
+  - RxJS: 6.6.7
+  - Zone.js: 0.11.4
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# TYPERMAN
-# TYPERMAN
-# TYPERMAN
+  
+## Detalles del Proyecto Back-End
+- **Versión de Node**: 22.14.0
