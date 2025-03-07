@@ -1,32 +1,93 @@
-# VIVA CRISTO REY
+Proyecto Angular con Firebase: Componentes de Login, Registro y Main
+Este proyecto es una aplicación Angular que implementa autenticación de usuarios utilizando Firebase. Incluye tres componentes principales: Login, Register y Main.
 
-# TYPERMAN
+Tabla de Contenidos
+Descripción
+Características
+Requisitos Previos
+Configuración e Instalación
+Estructura del Proyecto
+Uso
+Recursos Adicionales
+Descripción
+La aplicación permite a los usuarios registrarse, iniciar sesión y acceder a una página principal protegida. La autenticación se gestiona a través de Firebase Authentication, proporcionando una integración segura y escalable.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+Características
+Registro de Usuarios: Los nuevos usuarios pueden crear una cuenta utilizando su dirección de correo electrónico y una contraseña.
+Inicio de Sesión: Los usuarios registrados pueden autenticarse con sus credenciales.
+Página Principal Protegida: Solo los usuarios autenticados pueden acceder a la página principal.
+Integración con Firebase: Gestión de autenticación y almacenamiento de datos en tiempo real.
+Requisitos Previos
+Node.js (versión 12 o superior)
+Angular CLI (versión 12 o superior)
+Firebase CLI (opcional, para despliegue)
+Configuración e Instalación
+Clonar el Repositorio
 
-## Development server
+bash
+Copy
+Edit
+git clone https://github.com/tu-usuario/tu-repositorio.git
+cd tu-repositorio
+Instalar Dependencias
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+bash
+Copy
+Edit
+npm install
+Configurar Firebase
 
-## Code scaffolding
+Crea un proyecto en Firebase Console.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Añade una nueva aplicación web y copia la configuración de Firebase.
 
-## Build
+Reemplaza las credenciales en el archivo src/environments/environment.ts con la configuración de tu proyecto de Firebase.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+typescript
+Copy
+Edit
+export const environment = {
+  production: false,
+  firebaseConfig: {
+    apiKey: "TU_API_KEY",
+    authDomain: "TU_AUTH_DOMAIN",
+    projectId: "TU_PROJECT_ID",
+    storageBucket: "TU_STORAGE_BUCKET",
+    messagingSenderId: "TU_MESSAGING_SENDER_ID",
+    appId: "TU_APP_ID",
+    measurementId: "TU_MEASUREMENT_ID"
+  }
+};
+Iniciar la Aplicación
 
-## Running unit tests
+bash
+Copy
+Edit
+ng serve
+Accede a la aplicación en http://localhost:4200/.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Estructura del Proyecto
+src/app/components/login/: Contiene el componente de inicio de sesión.
+src/app/components/register/: Contiene el componente de registro de usuarios.
+src/app/components/main/: Contiene el componente principal al que acceden los usuarios autenticados.
+src/app/services/auth.service.ts: Servicio que maneja la lógica de autenticación con Firebase.
+Uso
+Registro de Usuario
 
-## Running end-to-end tests
+Navega a la página de registro (/register).
+Completa el formulario con un correo electrónico y una contraseña.
+Haz clic en "Registrar" para crear una nueva cuenta.
+Inicio de Sesión
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Navega a la página de inicio de sesión (/login).
+Ingresa tus credenciales y haz clic en "Iniciar Sesión".
+Si las credenciales son correctas, serás redirigido a la página principal.
+Acceso a la Página Principal
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# TYPERMAN
-# TYPERMAN
-# TYPERMAN
+Una vez autenticado, puedes acceder a la página principal (/main).
+Si intentas acceder a /main sin estar autenticado, serás redirigido a la página de inicio de sesión.
+Recursos Adicionales
+Documentación de Angular
+Documentación de Firebase Authentication
+Tutorial de Autenticación en Angular con Firebase
+Para una guía visual sobre cómo implementar la autenticación en Angular con Firebase, puedes consultar el siguiente video:

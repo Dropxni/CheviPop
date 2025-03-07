@@ -1,0 +1,27 @@
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+  }
+  .form-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .login-prompt {
+    text-align: center;
+    margin-top: 16px;
+  }
+  .login-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .login-link:hover {
+    text-decoration: underline;
+  }
+  

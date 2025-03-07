@@ -1,38 +1,18 @@
-<!-- Importante: Asegúrate de que en tu módulo hayas importado MatFormFieldModule, MatInputModule y MatButtonModule -->
-
 <div class="form-container mat-elevation-z4">
     <h2 class="form-title">Registro de usuario</h2>
     <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Email</mat-label>
-            <input matInput type="email" formControlName="email" placeholder="Ingrese su email">
-        </mat-form-field>
-        
-        <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Contraseña</mat-label>
-            <input matInput type="password" formControlName="password" placeholder="Ingrese su contraseña">
-        </mat-form-field>
-        
-        <button mat-raised-button color="primary" class="full-width" type="submit">Enviar</button>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="Ingrese su email">
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Ingrese su contraseña">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" class="full-width" type="submit">Enviar</button>
     </form>
-</div>
-
-<style>
-    .form-container {
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 20px;
-        background: white;
-        border-radius: 8px;
-    }
-    .form-title {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .full-width {
-        width: 100%;
-        margin-bottom: 16px;
-    }
-</style>
-
-
+    <p class="login-prompt">¿Ya tienes una cuenta? <a routerLink="/login" class="login-link">Inicia sesión aquí</a></p>
+  </div>
+  
