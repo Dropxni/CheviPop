@@ -1,41 +1,128 @@
-<!-- Importante: Asegúrate de que en tu módulo hayas importado MatFormFieldModule, MatInputModule y MatButtonModule -->
+<div class="auth-container">
 
-<div class="form-container mat-elevation-z4">
-    <h2 class="form-title">Registro de usuario</h2>
-    <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Email</mat-label>
-            <input matInput type="email" formControlName="email" placeholder="Ingrese su email">
-        </mat-form-field>
-        
-        <mat-form-field appearance="outline" class="full-width">
-            <mat-label>Contraseña</mat-label>
-            <input matInput type="password" formControlName="password" placeholder="Ingrese su contraseña">
-        </mat-form-field>
-        
-        <button mat-raised-button color="primary" class="full-width" type="submit">Enviar</button>
-    </form>
-    <div class="login-link">
-        <a routerLink="/login">¿Ya tienes una cuenta? Inicia sesión aquí</a>
+  <!-- PANEL IZQUIERDO -->
+  <div class="auth-left">
+    <div class="brand-content">
+      <h1>HealthTech Puebla</h1>
+      <p>
+        Plataforma segura para la gestión digital de expedientes clínicos.
+      </p>
+
+      <div class="security-badge">
+        <mat-icon>health_and_safety</mat-icon>
+        Cumplimiento con estándares de seguridad médica
+      </div>
     </div>
+  </div>
+
+  <!-- PANEL DERECHO -->
+  <div class="auth-right">
+
+    <mat-card class="form-card">
+
+      <h2 class="form-title">Crear cuenta profesional</h2>
+      <p class="form-subtitle">
+        Regístrate para acceder al portal clínico
+      </p>
+
+      <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+
+        <!-- EMAIL -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Correo institucional</mat-label>
+          <mat-icon matPrefix>mail</mat-icon>
+          <input matInput type="email"
+                 formControlName="email"
+                 placeholder="doctor@hospital.mx">
+
+          <mat-error *ngIf="formReg.get('email')?.hasError('required')">
+            El correo es obligatorio
+          </mat-error>
+
+          <mat-error *ngIf="formReg.get('email')?.hasError('email')">
+            Formato inválido
+          </mat-error>
+        </mat-form-field>
+
+        <!-- PASSWORD -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Contraseña segura</mat-label>
+          <mat-icon matPrefix>lock</mat-icon>
+
+          <input matInput
+                 [type]="hide ? 'password' : 'text'"
+                 formControlName="password">
+
+          <button mat-icon-button matSuffix
+                  type="button"
+                  (click)="hide = !hide">
+
+            <mat-icon>
+              {{ hide ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+          </button>
+
+          <mat-error *ngIf="formReg.get('password')?.hasError('required')">
+            La contraseña es obligatoria
+          </mat-error>
+
+          <mat-error *ngIf="formReg.get('password')?.hasError('minlength')">
+            Mínimo 8 caracteres
+          </mat-error>
+        </mat-form-field>
+
+        <!-- CONFIRM PASSWORD -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Confirmar contraseña</mat-label>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+
+          <input matInput
+                 [type]="hideConfirm ? 'password' : 'text'"
+                 formControlName="confirmPassword">
+
+          <button mat-icon-button matSuffix
+                  type="button"
+                  (click)="hideConfirm = !hideConfirm">
+
+            <mat-icon>
+              {{ hideConfirm ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+          </button>
+
+          <mat-error *ngIf="formReg.hasError('passwordMismatch')">
+            Las contraseñas no coinciden
+          </mat-error>
+        </mat-form-field>
+
+        <!-- ERROR -->
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
+        <!-- BOTÓN -->
+        <button mat-raised-button
+                color="primary"
+                class="full-width register-btn"
+                type="submit"
+                [disabled]="loading">
+
+          <mat-icon *ngIf="!loading">person_add</mat-icon>
+          {{ loading ? 'Creando cuenta...' : 'Crear cuenta' }}
+        </button>
+
+      </form>
+
+      <div class="divider">
+        <span>Acceso existente</span>
+      </div>
+
+      <div class="login-link">
+        ¿Ya tienes cuenta?
+        <a routerLink="/login">Iniciar sesión</a>
+      </div>
+
+    </mat-card>
+
+  </div>
+
 </div>
-
-<style>
-    .form-container {
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 20px;
-        background: white;
-        border-radius: 8px;
-    }
-    .form-title {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .full-width {
-        width: 100%;
-        margin-bottom: 16px;
-    }
-</style>
-
-

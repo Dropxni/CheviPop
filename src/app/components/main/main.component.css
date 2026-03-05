@@ -1,192 +1,263 @@
-/* ================================================ */
-/*              Reset y estilos globales            */
-/* ================================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* CONTENEDOR PRINCIPAL */
 
-html, body {
-  height: 100%;
-}
+.auth-container {
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* Fondo degradado en tonos pastel cálidos */
-  background: linear-gradient(135deg, #f6d365, #fda085);
   display: flex;
-  flex-direction: column;
+  min-height: 100vh;
+
+  background: linear-gradient(
+    135deg,
+    #0f2027,
+    #203a43,
+    #2c5364
+  );
+
+}
+
+
+/* PANEL IZQUIERDO */
+
+.auth-left {
+
+  flex: 1;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  color: #333;
+
+  padding: 60px;
+  color: white;
+
 }
 
-/* ================================================ */
-/*                    Encabezado                    */
-/* ================================================ */
-header {
-  width: 100%;
+
+/* CONTENIDO MARCA */
+
+.brand-content {
+
+  max-width: 420px;
+
+}
+
+
+.brand-content h1 {
+
+  font-size: 38px;
+  font-weight: 700;
+
   margin-bottom: 20px;
+
 }
 
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-header h1 {
-  font-size: 2.5rem;
-  color: #333;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-  margin: 0;
-}
+.brand-description {
 
-.logout-button {
-  background: #ff6f61;
-  border: none;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.logout-button:hover {
-  background: #ff3b2e;
-}
-
-/* ================================================ */
-/*           Contenedor principal de paneles        */
-/* ================================================ */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
-}
-
-/* ================================================ */
-/*                Estilos de los paneles            */
-/* ================================================ */
-.panel {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  flex: 1 1 300px; /* Se adapta al espacio disponible */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  margin-bottom: 20px;
-}
-
-.panel:hover {
-  transform: translateY(-5px);
-}
-
-.panel h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  color: #ff6f61; /* Acento coral para títulos */
-}
-
-/* ================================================ */
-/*         Panel de Control: Cuadrícula de botones    */
-/* ================================================ */
-.control-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.control-grid button {
-  padding: 15px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background: #ff6f61;
-  color: #fff;
-  transition: background 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.control-grid button:hover {
-  background: #ff3b2e;
-  transform: scale(1.05);
-}
-
-.control-grid button:active {
-  transform: scale(0.98);
-}
-
-/* Botones vacíos para mantener la estructura de la cuadrícula */
-.empty {
-  background: transparent;
-  pointer-events: none;
-}
-
-/* ================================================ */
-/*         Panel de Datos: Lista de información     */
-/* ================================================ */
-.data-list {
-  list-style: none;
-  font-size: 1.2rem;
+  font-size: 16px;
   line-height: 1.6;
+
+  opacity: 0.9;
+
 }
 
-.data-list li {
-  margin-bottom: 15px;
+
+/* BADGE SEGURIDAD */
+
+.security-badge {
+
+  margin-top: 30px;
+
   display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 8px;
+  align-items: center;
+
+  gap: 10px;
+
+  background: rgba(255,255,255,0.08);
+
+  padding: 12px 16px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
 }
 
-.data-list li:last-child {
-  border-bottom: none;
+
+/* PANEL DERECHO */
+
+.auth-right {
+
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
 }
 
-.data-label {
-  font-weight: bold;
-  color: #ff6f61;
+
+/* CARD */
+
+.form-card {
+
+  width: 100%;
+  max-width: 420px;
+
+  padding: 40px;
+
+  border-radius: 14px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
 }
 
-/* ================================================ */
-/*              Media Queries (Responsividad)       */
-/* ================================================ */
 
-/* Ajustes para pantallas menores a 768px */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  .container {
+/* TITULO */
+
+.form-title {
+
+  font-size: 24px;
+  font-weight: 600;
+
+  margin-bottom: 6px;
+
+}
+
+
+.form-subtitle {
+
+  color: #666;
+  margin-bottom: 25px;
+
+}
+
+
+/* CAMPOS */
+
+.full-width {
+
+  width: 100%;
+  margin-bottom: 18px;
+
+}
+
+
+/* BOTON LOGIN */
+
+.login-btn {
+
+  height: 48px;
+  font-weight: 500;
+
+  margin-top: 10px;
+
+}
+
+
+/* ERROR */
+
+.error-message {
+
+  color: #e53935;
+
+  margin-bottom: 10px;
+
+  font-size: 14px;
+
+}
+
+
+/* DIVIDER */
+
+.divider {
+
+  display: flex;
+  align-items: center;
+
+  margin: 25px 0;
+
+}
+
+
+.divider span {
+
+  font-size: 14px;
+  color: #888;
+
+  margin: auto;
+
+}
+
+
+/* GOOGLE BUTTON */
+
+.google-btn {
+
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+}
+
+
+/* LINK REGISTER */
+
+.register-link {
+
+  margin-top: 20px;
+
+  text-align: center;
+
+  font-size: 14px;
+
+}
+
+
+.register-link a {
+
+  color: #1976d2;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+}
+
+
+.register-link a:hover {
+
+  text-decoration: underline;
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  .auth-container {
+
     flex-direction: column;
-    align-items: center;
-  }
-  .panel {
-    width: 100%;
-  }
-}
 
-/* Ajustes para pantallas menores a 480px */
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.8rem;
   }
-  .control-grid button {
-    padding: 10px;
-    font-size: 1rem;
+
+  .auth-left {
+
+    text-align: center;
+
+    padding: 40px 20px;
+
   }
-  .data-list {
-    font-size: 1rem;
+
+  .auth-right {
+
+    padding: 20px;
+
   }
+
 }

@@ -9,22 +9,29 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class MainComponent implements OnInit {
 
-  title = 'Control de carro IoT';
+  title = 'HealthTech Puebla - Panel Clínico';
 
   constructor(
     private userService: UserService,
     private router: Router
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onClick() {
-    this.userService.logout()
-      .then(() => {
-        this.router.navigate(['/register']);
-      })
-      .catch(error => console.log(error));
+  async logout(): Promise<void> {
+
+    try {
+
+      await this.userService.logout();
+
+      this.router.navigate(['/login']);
+
+    } catch (error) {
+
+      console.error(error);
+
+    }
+
   }
 
 }

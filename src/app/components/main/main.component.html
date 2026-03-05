@@ -1,47 +1,94 @@
-<!-- Encabezado principal con título y botón de logout -->
-<header>
-  <div class="header-container">
-    <h1>{{ title }}</h1>
-    <!-- Al presionar el botón se ejecuta onClick() -->
-    <button class="logout-button" (click)="onClick()">Cerrar Sesión</button>
-  </div>
-</header>
+<div class="dashboard-container">
 
-<!-- Contenedor principal con dos paneles: uno para control y otro para datos -->
-<div class="container">
-  <!-- Panel de Control de Movimiento -->
-  <div class="panel" id="control-panel">
-    <h2>Panel de Control</h2>
-    <div class="control-grid">
-      <!-- Botones vacíos para centrar la cuadrícula -->
-      <button class="empty"></button>
-      <button id="btn-forward">Adelante</button>
-      <button class="empty"></button>
-      <button id="btn-left">Izquierda</button>
-      <button id="btn-stop">Stop</button>
-      <button id="btn-right">Derecha</button>
-      <button class="empty"></button>
-      <button id="btn-back">Atrás</button>
-      <button class="empty"></button>
+  <!-- HEADER -->
+  <header class="dashboard-header">
+
+    <div class="logo">
+      <mat-icon>health_and_safety</mat-icon>
+      <h1>{{ title }}</h1>
     </div>
+
+    <button mat-raised-button color="warn" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Cerrar sesión
+    </button>
+
+  </header>
+
+
+  <!-- GRID DASHBOARD -->
+  <div class="dashboard-grid">
+
+    <!-- CARD EXPEDIENTES -->
+    <mat-card class="dashboard-card">
+
+      <mat-icon class="card-icon">folder_shared</mat-icon>
+
+      <h2>Expedientes Clínicos</h2>
+
+      <p>
+        Accede de forma segura a los expedientes
+        médicos digitales de los pacientes.
+      </p>
+
+      <button mat-raised-button color="primary">
+        Ver expedientes
+      </button>
+
+    </mat-card>
+
+
+    <!-- CARD CONSULTAS -->
+    <mat-card class="dashboard-card">
+
+      <mat-icon class="card-icon">medical_services</mat-icon>
+
+      <h2>Consultas del día</h2>
+
+      <ul>
+
+        <li>
+          <strong>Pacientes programados:</strong> 12
+        </li>
+
+        <li>
+          <strong>Consultas realizadas:</strong> 5
+        </li>
+
+        <li>
+          <strong>Consultas pendientes:</strong> 7
+        </li>
+
+      </ul>
+
+    </mat-card>
+
+
+    <!-- CARD SEGURIDAD -->
+    <mat-card class="dashboard-card">
+
+      <mat-icon class="card-icon">security</mat-icon>
+
+      <h2>Estado de seguridad</h2>
+
+      <ul>
+
+        <li>
+          <strong>Intentos fallidos:</strong> monitoreados
+        </li>
+
+        <li>
+          <strong>Registro de accesos:</strong> activo
+        </li>
+
+        <li>
+          <strong>Protección fuerza bruta:</strong> habilitada
+        </li>
+
+      </ul>
+
+    </mat-card>
+
   </div>
-  
-  <!-- Panel de Datos del Carro -->
-  <div class="panel" id="data-panel">
-    <h2>Datos del Carro</h2>
-    <ul class="data-list">
-      <li>
-        <span class="data-label">Posición:</span>
-        <span id="position">0, 0</span>
-      </li>
-      <li>
-        <span class="data-label">Velocidad:</span>
-        <span id="speed">0 m/s</span>
-      </li>
-      <li>
-        <span class="data-label">Batería:</span>
-        <span id="battery">100%</span>
-      </li>
-    </ul>
-  </div>
+
 </div>

@@ -1,18 +1,117 @@
-<div class="login-container">
-    <h2>Login de usuario</h2>
-    <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" id="email" class="form-control" formControlName="email" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" class="form-control" formControlName="password" required>
-        </div>
-        <button class="btn btn-primary btn-submit" type="submit">Enviar</button>
-    </form>
-    <button class="btn btn-google" (click)="onClick()">Login With Google</button>
-    <div class="login-link">
-        <a routerLink="/register">¿Ya tienes una cuenta? Inicia sesión aquí</a>
+<div class="auth-container">
+
+  <!-- PANEL IZQUIERDO CORPORATIVO -->
+  <div class="auth-left">
+    <div class="brand-content">
+      <h1>HealthTech Puebla</h1>
+
+      <p class="brand-description">
+        Plataforma especializada en gestión digital segura
+        de expedientes clínicos para profesionales de la salud.
+      </p>
+
+      <div class="security-badge">
+        <mat-icon>health_and_safety</mat-icon>
+        Cumplimiento con estándares de seguridad médica
+      </div>
     </div>
+  </div>
+
+  <!-- PANEL DERECHO LOGIN -->
+  <div class="auth-right">
+
+    <mat-card class="form-card">
+
+      <h2 class="form-title">Acceso Profesional</h2>
+      <p class="form-subtitle">
+        Ingrese sus credenciales institucionales
+      </p>
+
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+
+        <!-- EMAIL -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Correo institucional</mat-label>
+          <mat-icon matPrefix>mail</mat-icon>
+          <input matInput
+                 type="email"
+                 formControlName="email"
+                 placeholder="doctor@hospital.mx">
+
+          <mat-error *ngIf="formLogin.get('email')?.hasError('required')">
+            El correo es obligatorio
+          </mat-error>
+
+          <mat-error *ngIf="formLogin.get('email')?.hasError('email')">
+            Formato inválido
+          </mat-error>
+        </mat-form-field>
+
+        <!-- PASSWORD -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Contraseña</mat-label>
+          <mat-icon matPrefix>lock</mat-icon>
+
+          <input matInput
+                 [type]="hide ? 'password' : 'text'"
+                 formControlName="password">
+
+          <button mat-icon-button
+                  matSuffix
+                  type="button"
+                  (click)="hide = !hide">
+
+            <mat-icon>
+              {{ hide ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+          </button>
+
+          <mat-error *ngIf="formLogin.get('password')?.hasError('required')">
+            La contraseña es obligatoria
+          </mat-error>
+
+          <mat-error *ngIf="formLogin.get('password')?.hasError('minlength')">
+            Mínimo 6 caracteres
+          </mat-error>
+        </mat-form-field>
+
+        <!-- ERROR -->
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
+        <!-- BOTÓN -->
+        <button mat-raised-button
+                color="primary"
+                class="full-width login-btn"
+                type="submit"
+                [disabled]="loading">
+
+          <mat-icon *ngIf="!loading">login</mat-icon>
+          {{ loading ? 'Verificando acceso...' : 'Ingresar al sistema' }}
+        </button>
+
+      </form>
+
+      <div class="divider">
+        <span>Acceso alternativo</span>
+      </div>
+
+      <button mat-stroked-button
+              class="full-width google-btn"
+              (click)="onClick()">
+
+        <mat-icon>account_circle</mat-icon>
+        Continuar con Google
+      </button>
+
+      <div class="register-link">
+        ¿Nuevo en la plataforma?
+        <a routerLink="/register">Solicitar acceso</a>
+      </div>
+
+    </mat-card>
+
+  </div>
+
 </div>

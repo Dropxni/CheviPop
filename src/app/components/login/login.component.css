@@ -1,65 +1,187 @@
-.login-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* ============================= */
+/* LAYOUT GENERAL */
+/* ============================= */
+
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
+/* ============================= */
+/* PANEL IZQUIERDO */
+/* ============================= */
+
+.auth-left {
+  flex: 1;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px;
 }
 
-.form-group {
-    margin-bottom: 15px;
+.brand-content {
+  max-width: 460px;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
+.brand-content h1 {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.brand-description {
+  font-size: 15px;
+  opacity: 0.95;
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
-.btn-submit {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+.security-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 18px;
+  border-radius: 10px;
 }
 
-.btn-google {
-    width: 100%;
-    padding: 10px;
-    background-color: #db4437;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+/* ============================= */
+/* PANEL DERECHO */
+/* ============================= */
+
+.auth-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f7fb;
+  padding: 40px;
 }
 
-.btn-google:hover {
-    background-color: #c33c2f;
+/* ============================= */
+/* CARD */
+/* ============================= */
+
+.form-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 45px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
-.register-prompt {
-    text-align: center;
-    margin-top: 15px;
+/* ============================= */
+/* TEXTOS */
+/* ============================= */
+
+.form-title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #0d47a1;
 }
+
+.form-subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* ============================= */
+/* BOTONES */
+/* ============================= */
+
+.login-btn {
+  height: 50px;
+  border-radius: 10px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.google-btn {
+  height: 48px;
+  border-radius: 10px;
+}
+
+/* ============================= */
+/* DIVIDER */
+/* ============================= */
+
+.divider {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.divider span {
+  background: white;
+  padding: 0 12px;
+}
+
+/* ============================= */
+/* LINKS */
+/* ============================= */
 
 .register-link {
-    color: #007bff;
-    text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 15px;
 }
 
-.register-link:hover {
-    text-decoration: underline;
+.register-link a {
+  margin-left: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #1976d2;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 992px) {
+
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-left {
+    height: 250px;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .brand-content h1 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .auth-left {
+    display: none;
+  }
+
+  .auth-right {
+    padding: 20px;
+    align-items: flex-start;
+  }
+
+  .form-card {
+    margin-top: 40px;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: none;
+  }
 }

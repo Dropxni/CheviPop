@@ -1,27 +1,177 @@
-.form-container {
-    max-width: 400px;
-    margin: 0 auto;
+/* CONTENEDOR */
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* PANEL IZQUIERDO */
+.auth-left {
+  flex: 1;
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.brand-content {
+  max-width: 480px;
+}
+
+.brand-content h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.brand-content p {
+  font-size: 15px;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+.security-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+/* PANEL DERECHO */
+.auth-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f7fb;
+  padding: 40px;
+}
+
+/* CARD */
+.form-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 40px 35px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* TEXTOS */
+.form-title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #0d47a1;
+}
+
+.form-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+/* BOTÓN */
+.register-btn {
+  height: 50px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* ERROR */
+.error-message {
+  text-align: center;
+  color: #d32f2f;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+/* DIVIDER */
+.divider {
+  margin: 25px 0;
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+}
+
+.divider span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+/* LOGIN LINK */
+.login-link {
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-link a {
+  margin-left: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #1976d2;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 992px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-left {
+    height: 240px;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .brand-content h1 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .auth-left {
+    display: none;
+  }
+
+  .auth-right {
     padding: 20px;
-    background: white;
-    border-radius: 8px;
+    align-items: flex-start;
   }
+
+  .form-card {
+    margin-top: 40px;
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .register-btn {
+    height: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .form-card {
+    box-shadow: none;
+    padding: 25px 18px;
+  }
+
   .form-title {
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 20px;
   }
-  .full-width {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-  .login-prompt {
-    text-align: center;
-    margin-top: 16px;
-  }
-  .login-link {
-    color: #007bff;
-    text-decoration: none;
-  }
-  .login-link:hover {
-    text-decoration: underline;
-  }
-  
+}
