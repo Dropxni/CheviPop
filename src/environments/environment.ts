@@ -1,13 +1,17 @@
+declare const process: any;
+
 export const environment = {
-  
+
+  production: true,
+
   firebase: {
-    projectId: 'typerman',
-    appId: '1:611752279888:web:c569b30255d2afbe6d7655',
-    storageBucket: 'typerman.appspot.com',
-    apiKey: 'AIzaSyAtNPUdkBRquFGIPjM5-VTnLRXtJc0sQ5c',
-    authDomain: 'typerman.firebaseapp.com',
-    messagingSenderId: '611752279888',
-    measurementId: 'G-KDCD4XV540',
-  },
-  production: true
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    appId: process.env.FIREBASE_APP_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    measurementId: process.env.FIREBASE_MEASUREMENT_ID
+  }
+
 };
